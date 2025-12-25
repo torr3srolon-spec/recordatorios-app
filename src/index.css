@@ -1,0 +1,344 @@
+
+:root {
+  --bg-day: #f0f4f8;        
+  --card-day: #ffffff;     
+  --text-day: #2c3e50;      
+  --accent-day: #4a90e2;    
+
+  --bg-night: #0f1115;      
+  --card-night: #1a1c20;    
+  --text-night: #e0e0e0;   
+  --accent-night: #66d9ef;  
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-day);
+  color: var(--text-day);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.dark {
+  background-color: var(--bg-night);
+  color: var(--text-night);
+}
+
+.container {
+  background: var(--card-day);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 520px;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.container.dark {
+  background: var(--card-night);
+  color: var(--text-night);
+  border: 1px solid #2c2c2c;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.toggle {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: var(--accent-day);
+  color: white;
+  transition: background 0.3s, transform 0.2s;
+}
+
+body.dark .toggle {
+  background: var(--accent-night);
+  color: black;
+}
+
+.toggle:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+input, button, select {
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent-day);
+  box-shadow: 0 0 6px rgba(74, 144, 226, 0.3);
+  outline: none;
+}
+
+body.dark input:focus, body.dark select:focus {
+  border-color: var(--accent-night);
+  box-shadow: 0 0 6px rgba(102, 217, 239, 0.3);
+}
+
+button {
+  background: var(--accent-day);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: #357ab8;
+  transform: translateY(-2px);
+}
+
+body.dark button {
+  background: var(--accent-night);
+  color: black;
+}
+
+body.dark button:hover {
+  background: #4db8d6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-day);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.3s;
+}
+
+body.dark li {
+  background: #22252a;
+  border: 1px solid #2c2c2c;
+}
+
+li span {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+li span.completed {
+  color: #4caf50;
+  font-style: italic;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+li span.pending {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+li.upcoming span {
+  color: #d35400;
+  font-weight: 600;
+}
+
+body.dark li.upcoming span {
+  color: var(--accent-night);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.filters button {
+  background: var(--card-day);
+  color: var(--text-day);
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.filters button:hover {
+  transform: translateY(-2px);
+  background: #e9ecef;
+}
+
+.filters button.active {
+  background: #357ab8;
+  color: white;
+  border: none;
+}
+
+body.dark .filters button {
+  background: var(--card-night);
+  color: var(--text-night);
+  border: 1px solid #2c2c2c;
+}
+
+body.dark .filters button:hover {
+  background: #2a2d33;
+}
+
+body.dark .filters button.active {
+  background: #4db8d6;
+  color: black;
+}
+
+.app-layout {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.calendar {
+  background: var(--card-day);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  min-width: 280px;
+  text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.calendar-header span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+  width: 14%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.calendar td.has-reminder {
+  background: var(--accent-day);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.calendar td:hover {
+  background: #e9ecef;
+  cursor: pointer;
+}
+
+body.dark .calendar {
+  background: var(--card-night);
+  color: var(--text-night);
+}
+
+body.dark .calendar-header span {
+  color: var(--accent-night);
+}
+
+body.dark .calendar td.has-reminder {
+  background: var(--accent-night);
+  color: black;
+  font-weight: bold;
+}
+
+body.dark .calendar td:hover {
+  background: #2a2d33;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--card-day);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+body.dark .modal-content {
+  background: var(--card-night);
+  color: var(--text-night);
+}
+
+.stats-panel {
+  background: var(--card-day);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+  text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.stats-panel h2 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent-day);
+}
+
+.stats-panel p {
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+body.dark .stats-panel {
+  background: var(--card-night);
+  color: var(--text-night);
+}
+
+body.dark .stats-panel h2 {
+  color: var(--accent-night);
+}
