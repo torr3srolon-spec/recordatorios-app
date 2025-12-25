@@ -1,16 +1,28 @@
-# React + Vite
+# 📌 Recordatorios App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación en **React** con **Firebase Firestore** para gestionar recordatorios personales y asignados.  
+Este proyecto permite crear, visualizar y administrar tareas con calendario, historial y estadísticas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades principales
 
-## React Compiler
+- ✍️ **Crear recordatorios** con texto, fecha, hora y categoría.
+- 👤 **Asignar tareas** a otro usuario por correo electrónico.
+- ✅ **Marcar como completados o pendientes**.
+- 🕑 **Historial de acciones** (creación, completado, pendiente).
+- 📅 **Calendario interactivo** para ver tareas por día.
+- 📊 **Panel de estadísticas** con pendientes y completadas.
+- 🌙 **Modo oscuro** para mejor experiencia visual.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚙️ Instalación y ejecución
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/torr3srolon-spec/recordatorios-app
+
+   npm install
+
+   npm run dev
